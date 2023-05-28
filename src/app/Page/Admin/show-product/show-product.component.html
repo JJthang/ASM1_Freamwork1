@@ -1,0 +1,22 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">Handle</th>
+        <th scope="col">Event</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of product">
+        <th scope="row">{{item.id}}</th>
+        <td>{{item.name}}</td>
+        <td>{{item.price}}</td>
+        <td>{{item.description}}</td>
+        <td> 
+            <a href="/Admin/Detail_Product/{{item.id}}" ><button >FIX</button></a>
+            <button (click)="OnDelete(item.id)">DELETE</button> </td>
+      </tr>
+    </tbody>
+  </table>
