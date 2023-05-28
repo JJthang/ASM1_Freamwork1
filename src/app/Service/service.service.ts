@@ -13,10 +13,14 @@ export class ServiceService {
   GET_product(){
     return this.http.get("http://localhost:3000/product")
   }
-  GET_product_ID(data : any){
-    return this.http.get("http://localhost:3000/product")
+  GET_product_ID({id} : any){
+    console.log(id);
+    return this.http.get("http://localhost:3000/product/" +id)
   }
   DELETE_product_ID(id : any){
     return this.http.delete("http://localhost:3000/product/"+id)
+  }
+  PUT_product_ID(data : any){
+    return this.http.put("http://localhost:3000/product/"+data.id, data)
   }
 }
