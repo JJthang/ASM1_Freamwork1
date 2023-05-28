@@ -24,11 +24,15 @@ export class FIXProductComponent {
   }
   proDuctForm = this.formbuilder.group({
     name : ['', [Validators.required, Validators.minLength(4)]],
-    price : [0],
-    description : [''],
+    price : [0,[Validators.required]],
+    description : ['',[Validators.required]],
   })
   handSubmit(){
-    if (!this.proDuctForm.valid) return
+    
+    if (!this.proDuctForm.valid) {
+      alert("Xin vui long nhap lai");
+      return;
+    }
     const product = {
       id : this.product.id,
       name : this.proDuctForm.value.name,

@@ -13,10 +13,10 @@
       "description": "hehe"
     },
     {
+      "id": 4,
       "name": "Pham Dac Thang",
       "price": 1000,
-      "description": "hehehehehe",
-      "id": 4
+      "description": "hehehehehe"
     }
   ]
 }
