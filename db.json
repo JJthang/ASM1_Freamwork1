@@ -8,7 +8,14 @@
     },
     {
       "id": 2,
-      "name": "Tao la thang",
+      "name": "thang",
+      "price": 1233232,
+      "description": "hehe"
+    }
+    ,
+    {
+      "id": 3,
+      "name": "thang",
       "price": 1233232,
       "description": "hehe"
     }
