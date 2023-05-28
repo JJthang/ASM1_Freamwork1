@@ -16,9 +16,12 @@ export class ShowProductComponent {
     })
   }
   OnDelete(id : any){
-    this.service.DELETE_product_ID(id).subscribe(data => {
-      this.product = this.product.filter((product : any) => product.id != id)
-    })
+    if (confirm('Are you sure you want to delete this')) {
+      this.service.DELETE_product_ID(id).subscribe(data => {
+        this.product = this.product.filter((product : any) => product.id != id)
+      })
+    }
+
   }
 
 }

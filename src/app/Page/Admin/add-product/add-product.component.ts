@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder } from "@angular/forms";
+import { FormBuilder, Validators } from "@angular/forms";
 import { Router } from '@angular/router';
 import { ServiceService } from 'src/app/Service/service.service';
 
@@ -12,16 +12,18 @@ export class AddProductComponent {
   constructor(private formbuilder : FormBuilder, private service : ServiceService, private route : Router){
   }
   proDuctForm = this.formbuilder.group({
-    name : [''],
-    price : [0],
-    description : [''],
+    name : ['',[Validators.required, Validators.minLength(4)]],
+    price : [0, [Validators.required]],
+    description : ['',[Validators.required]],
   })
   handSubmit(){
+    if (!this.proDuctForm.valid) {
+      alert("Xin vui long nhap lai");
+      return;
+    }
     this.service.Add_product(this.proDuctForm.value).subscribe(data => {
       console.log("Them sản phầm thàn công");
       this.route.navigateByUrl("/Admin/Show_Product")
     })
-
-    
   }
 }
